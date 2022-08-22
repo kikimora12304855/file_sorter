@@ -1,0 +1,27 @@
+{
+  "folder_track": "/home/jojo/my_pak",
+
+  "folder_name": {
+
+    "Misic": ["wav", "aiff", "ape", "flac", "mp3", "ogg"],
+
+    "Image": ["raw", "jpeg", "jpg", "tiff", "psd", "bmp", "gif", "png", "jpeg200", "jp2"],
+
+    "Archive": ["zip", "rar", "arj", "cab", "gzip", "ace", "tar", "7z", "zz", "gz"],
+
+    "Video": ["mp4", "mov", "wmv", "avi", "avchd", "flv", "f4v", "swf", "mpeg-2"],
+
+    "Document": ["doc", "docx", "pdf", "rtf", "wpd"],
+
+    "Text": ["text"],
+
+    "Apps": ["cc", "cpp", "cxx", "c", "c++", "h", "hpp", "hh", "hxx", "h++", "py", "pyc", "js"],
+
+    "App": ["exe"],
+
+    "Excel": ["xlsx", "xls", "xl", "xlsm", "xar"]
+
+
+
+  }
+}
