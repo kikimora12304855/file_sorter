@@ -1,5 +1,5 @@
 {
-  "folder_track": "/home/jojo/my_pak",
+  "folder_track": "/home/prince/sorter",
 
   "folder_name": {
 
@@ -17,7 +17,7 @@
 
     "Apps": ["cc", "cpp", "cxx", "c", "c++", "h", "hpp", "hh", "hxx", "h++", "py", "pyc", "js"],
 
-    "App": ["exe"],
+    "App": ["exe", "sh"],
 
     "Excel": ["xlsx", "xls", "xl", "xlsm", "xar"]
 

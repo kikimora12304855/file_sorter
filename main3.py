@@ -4,30 +4,32 @@ import os
 import time
 import json
 
-
 with open("seting.json", "r") as with_json_file:
     json_file = json.load(with_json_file)
 
-
-for f in json_file["folder_name"]:
-    if f not in os.listdir(json_file["folder_track"]):
-        os.mkdir(json_file["folder_track"] + "/" + f)
-
+folder_name = json_file['folder_name']
+folder_track = json_file['folder_track']
 
 
 class Handler(FileSystemEventHandler):
     def on_modified(self, event):
-        for filename in os.listdir(json_file["folder_track"]):
-            for folder_name in json_file["folder_name"]:
-                if len(filename.split(".", 1)) > 1 and (filename[::-1].split(".", 1)[0].lower()[::-1] in json_file["folder_name"][folder_name]):
-                    os.rename(json_file["folder_track"] + "/" + filename, json_file["folder_track"] + "/" + folder_name + "/" + filename)
+        for file in os.listdir(folder_track):
 
+            for Folder_name in folder_name:
+                suffix = file.split(".")[-1].lower()
+
+                if len(file.split(".", 1)) > 1 and (suffix in folder_name[Folder_name]):
+
+                    if Folder_name not in os.listdir(folder_track):
+                        os.mkdir(folder_track + '/' + Folder_name)
+
+                    file, Folder_name = '/' + file, '/' + Folder_name
+                    os.rename(folder_track + file, folder_track + Folder_name + file)
 
 
 if __name__ == '__main__':
-    handle = Handler()
-    observer = Observer()
-    observer.schedule(handle, json_file["folder_track"], recursive=True)
+    handle, observer = Handler(), Observer()
+    observer.schedule(handle, folder_track, recursive=True)
     observer.start()
 
     try:
